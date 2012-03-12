@@ -4,7 +4,7 @@ Plugin Name: Quotes and Tips
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin displays the Quotes and Tips in random order
 Author: BestWebSoft
-Version: 1.01
+Version: 1.02
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -42,7 +42,8 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://wordpress.org/extend/plugins/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
 			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://wordpress.org/extend/plugins/portfolio/', 'http://bestwebsoft.com/plugin/portfolio-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
-			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' )
+			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
+			array( 'quotes_and_tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://wordpress.org/extend/plugins/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' )
 		);
 		foreach( $array_plugins as $plugins ) {
 			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
@@ -105,9 +106,6 @@ if( ! function_exists( 'add_qtsndtps_admin_menu' ) ) {
 		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url("images/px.png", __FILE__), 1001); 
 		$qtsndtps_admin_menu = add_submenu_page('bws_plugins', __( 'Quotes and Tips', 'quotes_and_tips' ), __( 'Quotes and Tips', 'quotes_and_tips' ), 'manage_options', "quotes-and-tips.php", 'qtsndtps_settings_page');
 
-		//call register settings function
-		//add_action( 'admin_init', 'register_qtsndtps_settings' );
-		add_action( 'admin_print_styles-' . $qtsndtps_admin_menu, 'qtsndtps_admin_css_plugin_page');
 	}
 }
 
@@ -491,7 +489,6 @@ if( ! function_exists( 'qtsndtps_plugin_action_links' ) ) {
 if ( ! function_exists ( 'qtsndtps_plugin_init' ) ) {
 	function qtsndtps_plugin_init() {
 		load_plugin_textdomain( 'quotes_and_tips', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
-		wp_enqueue_style( 'qtsndtpsStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 	}
 }
 
@@ -618,11 +615,18 @@ if ( ! function_exists ( 'qtsndtps_print_style_script' ) ) {
 	}
 }
 
-if ( ! function_exists ( 'qtsndtps_admin_css_plugin_page' ) ) {
-	function qtsndtps_admin_css_plugin_page() {
+if ( ! function_exists ( 'qtsndtps_admin_head' ) ) {
+	function qtsndtps_admin_head() {
+		wp_enqueue_style( 'qtsndtpsStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 		wp_enqueue_style( 'farbtastic' );
 		wp_enqueue_script( 'farbtastic' );
-		wp_enqueue_script( 'qtsndtpsrColorJs', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ) );
+		//wp_enqueue_script( 'qtsndtpsrColorJs', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ) );
+	}
+}
+
+if ( ! function_exists ( 'qtsndtps_wp_head' ) ) {
+	function qtsndtps_wp_head() {
+		wp_enqueue_style( 'qtsndtpsStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 	}
 }
 
@@ -641,4 +645,7 @@ add_action( 'init', 'qtsndtps_register_quote_post_type' );
 
 add_action( 'wp_head', 'qtsndtps_print_style_script' );
 add_action( 'init', 'register_qtsndtps_settings' );
+
+add_action( 'admin_enqueue_scripts', 'qtsndtps_admin_head' );
+add_action( 'wp_enqueue_scripts', 'qtsndtps_wp_head' );
 ?>

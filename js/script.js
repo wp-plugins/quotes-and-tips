@@ -63,9 +63,9 @@ var farbtastic2;
 
 		$('#qtsndtps_additional_options').change( function() {
 			if($(this).is(':checked') )
-				$('.qtsndtps_hidden').show();
+				$('.qtsndtps_additions_block').show();
 			else
-				$('.qtsndtps_hidden').hide();
+				$('.qtsndtps_additions_block').hide();
 		});
 		
 		if( $('.qtsndtps_title_post:checked').val() == '1' )

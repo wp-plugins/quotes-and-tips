@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 1.01
+Stable tag: 1.02
 
 This plugin allows you to implement quotes & tips block into your web site.
 
@@ -12,8 +12,8 @@ This plugin allows you to implement quotes & tips block into your web site.
 
 This plugin allows you to create and publish quotes of your customers about your work and helpful tips for the website visitors.
 
-<a href="#" target="_blank">FAQ</a>
-<a href="#" target="_blank">Support</a>
+<a href="http://wordpress.org/extend/plugins/quotes-and-tips/faq/" target="_blank">FAQ</a>
+<a href="http://bestwebsoft.com/plugin/quotes-and-tips/" target="_blank">Support</a>
 
 = Features =
 
@@ -21,7 +21,7 @@ This plugin allows you to create and publish quotes of your customers about your
 * Actions: possibility to add quotes & tips to any place on your website .
 * Label: There is a possibility to change the label for quotes block and tips block - user custom label or title from quotes & tips posts.
 
-= Translate =
+= Translation =
 
 * Russian (ru_RU)
 
@@ -82,11 +82,17 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V1.02 - 12.03.2012 =
+* Changed : BWS plugins section. 
+
 = V1.01 - 01.03.2012 =
-* NEW : Added Additional options for pluign.
-* NEW : Added Rusian language file for plugin.
+* NEW : Additional options for pluign are added.
+* NEW : Russian language file is added to the plugin.
 
 == Upgrade Notice ==
 
+= V1.02 =
+BWS plugins section has been changed. 
+
 = V1.01 =
-Added Additional options for Settings plugin page. Added Rusian language file for plugin.
+Additional options for Settings plugin page are added. Added Russian language file is added to the plugin.
