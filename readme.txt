@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 1.02
+Stable tag: 1.03
 
 This plugin allows you to implement quotes & tips block into your web site.
 
@@ -82,6 +82,10 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V1.03 - 05.04.2012 =
+* Bugfix : The conflict of our javascript with javascript of other plugins is fixed. 
+* Changed : BWS plugins section. 
+
 = V1.02 - 12.03.2012 =
 * Changed : BWS plugins section. 
 
@@ -90,6 +94,9 @@ Here is an example for German language files.
 * NEW : Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.03 =
+The conflict of our javascript with javascript of other plugins is fixed. BWS plugins section. 
 
 = V1.02 =
 BWS plugins section has been changed. 
