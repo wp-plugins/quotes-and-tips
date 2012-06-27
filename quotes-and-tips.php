@@ -4,7 +4,7 @@ Plugin Name: Quotes and Tips
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin displays the Quotes and Tips in random order
 Author: BestWebSoft
-Version: 1.03
+Version: 1.04
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -370,6 +370,7 @@ if( ! function_exists( 'qtsndtps_settings_page' ) ) {
 		<h2><?php _e('Quotes and Tips Options', 'quotes_and_tips' ); ?></h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['qtsndtps_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
+		<p><?php echo __( "If you would like to utilize this block, please put strings below into the template source code ", 'quotes_and_tips' ); ?><code>&#60;?php if( function_exists( 'qtsndtps_get_random_tip_quote' ) ) qtsndtps_get_random_tip_quote(); ?&#62;</code></p>	
 		<form method="post" action="admin.php?page=quotes-and-tips.php" id='qtsndtps_form_image_size' enctype="multipart/form-data">
 			<table class="form-table">
 				<tr valign="top">

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 1.03
+Tested up to: 3.4
+Stable tag: 1.04
 
 This plugin allows you to implement quotes & tips block into your web site.
 
@@ -86,6 +86,9 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V1.04 - 27.06.2012 =
+* Update : We updated all functionality for wordpress 3.4.
+
 = V1.03 - 05.04.2012 =
 * Bugfix : The conflict of our javascript with javascript of other plugins is fixed. 
 * Changed : BWS plugins section. 
@@ -98,6 +101,9 @@ Here is an example for German language files.
 * NEW : Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.04 =
+We updated all functionality for wordpress 3.4.
 
 = V1.03 =
 The conflict of our javascript with javascript of other plugins is fixed. BWS plugins section. 
