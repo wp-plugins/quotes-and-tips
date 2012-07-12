@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
-Tested up to: 3.4
-Stable tag: 1.04
+Tested up to: 3.4.1
+Stable tag: 1.05
 
 This plugin allows you to implement quotes & tips block into your web site.
 
@@ -23,6 +23,7 @@ This plugin allows you to create and publish quotes of your customers about your
 
 = Translation =
 
+* Hebrew (he_IL) (thanks to Sagive SEO)
 * Russian (ru_RU)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
@@ -86,6 +87,10 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V1.05 - 10.07.2012 =
+* NEW : Hebrew language file is added to the plugin.
+* Update : We updated all functionality for wordpress 3.4.1.
+
 = V1.04 - 27.06.2012 =
 * Update : We updated all functionality for wordpress 3.4.
 
@@ -101,6 +106,9 @@ Here is an example for German language files.
 * NEW : Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.05 =
+Hebrew language file is added to the plugin. We updated all functionality for wordpress 3.4.1.
 
 = V1.04 =
 We updated all functionality for wordpress 3.4.

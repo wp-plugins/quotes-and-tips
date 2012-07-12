@@ -4,7 +4,7 @@ Plugin Name: Quotes and Tips
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin displays the Quotes and Tips in random order
 Author: BestWebSoft
-Version: 1.04
+Version: 1.05
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
