@@ -4,7 +4,7 @@ Plugin Name: Quotes and Tips
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin displays the Quotes and Tips in random order
 Author: BestWebSoft
-Version: 1.05
+Version: 1.06
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -225,6 +225,7 @@ if( ! function_exists( 'qtsndtps_quote_custom_metabox' ) ) {
 		global $post;
 		$name_field = get_post_meta( $post->ID, 'name_field') ;
 		$off_cap = get_post_meta( $post->ID, 'off_cap');
+		wp_nonce_field( plugin_basename(__FILE__), 'qtsndtps_nonce_name' );
 		?>
 		<p><label for="name_field"><?php _e( 'Name:', 'quotes_and_tips' ); ?><br />
 			<input type="text" id="name_field" size="37" name="name_field" value="<?php echo $name_field[0]; ?>"/></label></p>
@@ -237,7 +238,7 @@ if( ! function_exists( 'qtsndtps_quote_custom_metabox' ) ) {
 if( ! function_exists( 'qtsndtps_save_custom_quote' ) ) {
 	function qtsndtps_save_custom_quote( $post_id ) {
 		global $post;	
-		if( ( isset( $_POST['name_field'] ) && $_POST['name_field'] != '' ) || ( isset( $_POST['off_cap'] ) && $_POST['off_cap'] != '' ) ) {
+		if( ( ( isset( $_POST['name_field'] ) && $_POST['name_field'] != '' ) || ( isset( $_POST['off_cap'] ) && $_POST['off_cap'] != '' ) ) && check_admin_referer( plugin_basename(__FILE__), 'qtsndtps_nonce_name' ) ) {
 			update_post_meta( $post->ID, 'name_field', $_POST['name_field'] );
 			update_post_meta( $post->ID, 'off_cap', $_POST['off_cap'] );
 		}
@@ -301,7 +302,7 @@ if( ! function_exists( 'qtsndtps_settings_page' ) ) {
 		$error = "";
 
 		// Save data for settings page
-		if( isset( $_REQUEST['qtsndtps_form_submit'] ) ) {
+		if( isset( $_REQUEST['qtsndtps_form_submit'] ) && check_admin_referer( plugin_basename(__FILE__), 'qtsndtps_nonce_name' ) ) {
 			$qtsndtps_request_options = array();
 			$qtsndtps_request_options['qtsndtps_page_load']					= $_REQUEST['qtsndtps_page_load'];
 			$qtsndtps_request_options['qtsndtps_interval_load']			= $_REQUEST['qtsndtps_interval_load'];
@@ -459,6 +460,7 @@ if( ! function_exists( 'qtsndtps_settings_page' ) ) {
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 			</p>
+			<?php wp_nonce_field( plugin_basename(__FILE__), 'qtsndtps_nonce_name' ); ?>
 		</form>
 	</div>
 	<?php } 
