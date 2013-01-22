@@ -4,7 +4,9 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.06
+Stable tag: 1.07
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin allows you to implement quotes & tips block into your web site.
 
