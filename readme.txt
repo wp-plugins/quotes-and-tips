@@ -3,7 +3,7 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
-Tested up to: 3.4.1
+Tested up to: 3.5.1
 Stable tag: 1.07
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -89,6 +89,10 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V1.07 - 31.01.2013 =
+* Bugfix : Bugs in admin menu were fixed.
+* Update : We updated all functionality for wordpress 3.5.1.
+
 = V1.06 - 24.07.2012 =
 * Bugfix : Cross Site Request Forgery bug was fixed.
 
@@ -111,6 +115,9 @@ Here is an example for German language files.
 * NEW : Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.07 =
+Bugs in admin menu were fixed. We updated all functionality for wordpress 3.5.1.
 
 = V1.06 =
 Cross Site Request Forgery bug was fixed.
