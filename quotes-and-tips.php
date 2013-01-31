@@ -472,7 +472,7 @@ if( ! function_exists( 'qtsndtps_register_plugin_links' ) ) {
 		$base = plugin_basename(__FILE__);
 		if ($file == $base) {
 			$links[] = '<a href="admin.php?page=quotes-and-tips.php">' . __( 'Settings', 'quotes_and_tips' ) . '</a>';
-			$links[] = '<a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">' . __( 'FAQ', 'quotes_and_tips' ) . '</a>';
+			$links[] = '<a href="http://wordpress.org/extend/plugins/quotes-and-tips/faq/" target="_blank">' . __( 'FAQ', 'quotes_and_tips' ) . '</a>';
 			$links[] = '<a href="Mailto:plugin@bestwebsoft.com">' . __( 'Support', 'quotes_and_tips' ) . '</a>';
 		}
 		return $links;
