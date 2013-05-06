@@ -1,0 +1,367 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Quotes and Tips\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-17 14:48+0300\n"
+"PO-Revision-Date: 2013-04-17 14:48+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:80
+msgid "Activated plugins"
+msgstr "תוספים פעילים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:82
+#: quotes-and-tips.php:90
+#: quotes-and-tips.php:98
+msgid "Read more"
+msgstr "קרא עוד"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:82
+#: quotes-and-tips.php:474
+#: quotes-and-tips.php:489
+msgid "Settings"
+msgstr "הגדרות"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:88
+msgid "Installed plugins"
+msgstr "תוספים מותקנים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:96
+msgid "Recommended plugins"
+msgstr "תוספים מומלצים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:98
+msgid "Download"
+msgstr "הורד"
+
+# @ default
+#: quotes-and-tips.php:98
+#, php-format
+msgid "Install %s"
+msgstr "התקנת% s"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:98
+msgid "Install now from wordpress.org"
+msgstr "התקן כעת מ wordpress.org"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:100
+#, fuzzy
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill out the contact form on our website"
+msgstr "אם יש לך שאלות כלשהן, אנא צור עמנו קשר דרך plugin@bestwebsoft.com או שתמלא את טופס יצירת הקשר באתר שלנו"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:111
+msgid "Quotes and Tips"
+msgstr "ציטוטים וטיפים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:119
+#: quotes-and-tips.php:120
+#: quotes-and-tips.php:264
+msgid "Tips"
+msgstr "טיפים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:128
+#, fuzzy
+msgid "Add a new tip"
+msgstr "הוסף טיפים חדשים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:129
+msgid "Edit tips"
+msgstr "ערוך טיפים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:130
+#, fuzzy
+msgid "New tip"
+msgstr "טיפים חדשים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:131
+msgid "View tips"
+msgstr "הצג טיפים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:132
+msgid "Search tips"
+msgstr "חפש טיפים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:133
+msgid "No tips found"
+msgstr "לא נמצאו טיפים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:134
+msgid "No tips found in Trash"
+msgstr "לא נמצאו טיפים בפח"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:144
+#: quotes-and-tips.php:145
+msgid "Quotes"
+msgstr "ציטוטים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:153
+msgid "Add a New quote"
+msgstr "הוסף ציטוט חדש"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:154
+msgid "Edit quote"
+msgstr "ערוך ציטוט"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:155
+msgid "New quote"
+msgstr "ציטוט חדש"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:156
+msgid "View quote"
+msgstr "הצג ציטוט"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:157
+msgid "Search quote"
+msgstr "חיפוש ציטוט"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:158
+msgid "No quote found"
+msgstr "לא נמצאו ציטטות"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:159
+msgid "No quote found in Trash"
+msgstr "לא נמצאו ציטטות בפח"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:231
+msgid "Name:"
+msgstr "שם:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:233
+#, fuzzy
+msgid "Official position:"
+msgstr "קיבולת רשמית:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:251
+#, fuzzy
+msgid "Name and Official position"
+msgstr "שם וקיבולת רשמית"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:265
+msgid "Quotes from our clients"
+msgstr "ציטטות מהלקוחות שלנו"
+
+# @ default
+#: quotes-and-tips.php:330
+#, php-format
+msgid "The uploaded file could not be moved to %s."
+msgstr "אי אפשר היה להעביר את הקובץ שהועלה אל %s"
+
+# @ default
+#: quotes-and-tips.php:330
+msgid "Image Processing Error"
+msgstr "שגיאה בעיבוד התמונה"
+
+# @ default
+#: quotes-and-tips.php:336
+msgid "Image Upload Error"
+msgstr "שגיאה בהעלאת התמונה"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:365
+#, fuzzy
+msgid "Settings saved"
+msgstr "הגדרות"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:372
+#, fuzzy
+msgid "Quotes and Tips Settings"
+msgstr "אפשרויות ציטטות וטיפים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:375
+#, fuzzy
+msgid "If you would like to use this block, please paste the following strings into the template source code"
+msgstr "אם אתה רוצה לנצל את הבלוק הזה, נא לשים את המחרוזות שלהלן בקוד המקור של התבנית "
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:379
+#, fuzzy
+msgid "Upload settings:"
+msgstr "אפשרויות העלאה:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:381
+#, fuzzy
+msgid "Random order with the page reload"
+msgstr "הצג באופן אקראי ללא טעינה מחדש של הדף"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:382
+#, fuzzy
+msgid "Random order without the page reload"
+msgstr "הצג באופן אקראי ללא טעינה מחדש של הדף"
+
+#: quotes-and-tips.php:383
+msgid "Reload time (in seconds)"
+msgstr ""
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:387
+msgid "Title options:"
+msgstr "אפשרויות כותרת:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:389
+msgid "Get title from post"
+msgstr "השתמש בכותרת הפוסט"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:390
+msgid "Get label of the block"
+msgstr "השתמש בתווית הבלוק"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:394
+msgid "Tip label:"
+msgstr "תווית טיפ:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:400
+msgid "Quote label:"
+msgstr "תווית ציטטה:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:406
+#, fuzzy
+msgid "Additional settings"
+msgstr "אפשרויות נוספות"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:409
+msgid "Background Color:"
+msgstr "צבע רקע:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:417
+msgid "Text Color:"
+msgstr "צבע טקסט:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:425
+msgid "Background image:"
+msgstr "תמונת רקע:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:427
+msgid "Use background image"
+msgstr "השתמש בתמונת רקע"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:428
+msgid "Choose an image from your computer:"
+msgstr "בחר תמונה מן המחשב שלך:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:431
+msgid "Current image:"
+msgstr "תמונה נוכחית:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:437
+msgid "Background image repeat:"
+msgstr "שכפול תמונת רקע:"
+
+#: quotes-and-tips.php:439
+msgid "Horizontal repeat (x)"
+msgstr ""
+
+#: quotes-and-tips.php:440
+msgid "Vertical repeat (y)"
+msgstr ""
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:444
+#, fuzzy
+msgid "Background image horizontal alignment:"
+msgstr "יישור אופקי של תמונת רקע:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:446
+msgid "Left"
+msgstr "שמאל"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:447
+#: quotes-and-tips.php:455
+msgid "Center"
+msgstr "מרכז"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:448
+msgid "Right"
+msgstr "ימין"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:452
+#, fuzzy
+msgid "Background image vertical alignment:"
+msgstr "יישור אנכי של תמונת הרקע:"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:454
+msgid "Top"
+msgstr "למעלה"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:456
+msgid "Bottom"
+msgstr "למטה"
+
+# @ default
+#: quotes-and-tips.php:462
+msgid "Save Changes"
+msgstr "שמור שינויים"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:475
+msgid "FAQ"
+msgstr "שאלות ותשובות"
+
+# @ quotes_and_tips
+#: quotes-and-tips.php:476
+msgid "Support"
+msgstr "תמיכה"
+
