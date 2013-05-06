@@ -4,12 +4,12 @@ Plugin Name: Quotes and Tips
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin displays the Quotes and Tips in random order
 Author: BestWebSoft
-Version: 1.08
+Version: 1.09
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
 
-/*  © Copyright 2011  BestWebSoft  ( admin@bestwebsoft.com )
+/*  © Copyright 2011  BestWebSoft  ( http://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -97,7 +97,7 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
 				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'quotes_and_tips'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'quotes_and_tips'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'quotes_and_tips' ) ?></a></p>
 				<?php } ?>
-				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via plugin@bestwebsoft.com or fill out the contact form on our website', 'quotes_and_tips' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
+				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'quotes_and_tips' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
 			</div>
 			<?php } ?>
 		</div>
@@ -473,7 +473,7 @@ if( ! function_exists( 'qtsndtps_register_plugin_links' ) ) {
 		if ($file == $base) {
 			$links[] = '<a href="admin.php?page=quotes-and-tips.php">' . __( 'Settings', 'quotes_and_tips' ) . '</a>';
 			$links[] = '<a href="http://wordpress.org/extend/plugins/quotes-and-tips/faq/" target="_blank">' . __( 'FAQ', 'quotes_and_tips' ) . '</a>';
-			$links[] = '<a href="Mailto:plugin@bestwebsoft.com">' . __( 'Support', 'quotes_and_tips' ) . '</a>';
+			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'quotes_and_tips' ) . '</a>';
 		}
 		return $links;
 	}

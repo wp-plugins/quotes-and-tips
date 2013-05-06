@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.08
+Stable tag: 1.09
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ This plugin allows you to implement the Quotes & Tips block into your web site.
 This plugin allows you to create and publish quotes of your customers about your work and helpful tips for the website visitors.
 
 <a href="http://wordpress.org/extend/plugins/quotes-and-tips/faq/" target="_blank">FAQ</a>
-<a href="http://bestwebsoft.com/plugin/quotes-and-tips/" target="_blank">Support</a>
+<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 = Features =
 
@@ -25,10 +25,11 @@ This plugin allows you to create and publish quotes of your customers about your
 
 = Translation =
 
+* German (de_DE) (thanks to <a href="mailto:arnold@montjoie.de">Arnold Montjoie</a>)
 * Hebrew (he_IL) (thanks to Sagive SEO)
 * Russian (ru_RU)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
@@ -93,6 +94,9 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V1.09 - 06.05.2013 =
+* NEW : The German language file is added to the plugin.
+
 = V1.08 - 17.04.2013 =
 * Update : The English language is updated in the plugin.
 
@@ -122,6 +126,9 @@ Here is an example for the German language files.
 * NEW : The Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.09 =
+The German language file is added to the plugin.
 
 = V1.08 =
 The English language is updated in the plugin.
