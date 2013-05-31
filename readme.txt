@@ -1,10 +1,10 @@
-﻿=== Quotes and Tips ===
+=== Quotes and Tips ===
 Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.09
+Stable tag: 1.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,9 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V1.10 - 30.05.2013 =
+* Update : BWS plugins section is updated.
+
 = V1.09 - 06.05.2013 =
 * NEW : The German language file is added to the plugin.
 
@@ -126,6 +129,9 @@ Here is an example for the German language files.
 * NEW : The Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.10 =
+BWS plugins section is updated.
 
 = V1.09 =
 The German language file is added to the plugin.
