@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.10
+Tested up to: 3.5.2
+Stable tag: 1.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ This plugin allows you to create and publish quotes of your customers about your
 * Hebrew (he_IL) (thanks to Sagive SEO)
 * Russian (ru_RU)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
@@ -94,6 +94,10 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V1.11 - 18.07.2013 =
+* NEW : Added an ability to view and send system information by mail.
+* Update : We updated all functionality for wordpress 3.5.2.
+
 = V1.10 - 30.05.2013 =
 * Update : BWS plugins section is updated.
 
@@ -129,6 +133,9 @@ Here is an example for the German language files.
 * NEW : The Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.11 =
+Added an ability to view and send system information by mail. We updated all functionality for wordpress 3.5.2.
 
 = V1.10 =
 BWS plugins section is updated.
