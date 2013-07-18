@@ -166,3 +166,4 @@ BWS plugins section has been changed.
 
 = V1.01 =
 Additional options for Settings plugin page are added. Added The Russian language file is added to the plugin.
+
