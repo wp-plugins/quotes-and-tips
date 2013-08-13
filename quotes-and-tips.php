@@ -778,7 +778,7 @@ if ( ! function_exists ( 'qtsndtps_print_style_script' ) ) {
 		if ( $background_color == '#2484C6' && $background_color == '#FFFFFF' && empty ( $background_image ) )
 			return;
 		?>
-		<style>
+		<style type="text/css">
 			/* Style for tips|quote block */
 			#quotes_box_and_tips{
 				background-color:<?php echo $background_color; ?> !important;
