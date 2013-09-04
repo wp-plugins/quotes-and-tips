@@ -4,7 +4,7 @@ Plugin Name: Quotes and Tips
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin displays the Quotes and Tips in random order
 Author: BestWebSoft
-Version: 1.11
+Version: 1.12
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -25,374 +25,34 @@ License: GPLv2 or later
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if ( ! function_exists( 'bws_add_menu_render' ) ) {
-	function bws_add_menu_render() {
-		global $wpdb, $wp_version, $title;
-		$active_plugins = get_option('active_plugins');
-		$all_plugins = get_plugins();
-		$error = '';
-		$message = '';
-		$bwsmn_form_email = '';
+require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
 
-		$array_activate = array();
-		$array_install	= array();
-		$array_recomend = array();
-		$count_activate = $count_install = $count_recomend = 0;
-		$array_plugins	= array(
-			array( 'captcha\/captcha.php', 'Captcha', 'http://bestwebsoft.com/plugin/captcha-plugin/', 'http://bestwebsoft.com/plugin/captcha-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Captcha+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=captcha.php' ), 
-			array( 'contact-form-plugin\/contact_form.php', 'Contact Form', 'http://bestwebsoft.com/plugin/contact-form/', 'http://bestwebsoft.com/plugin/contact-form/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Contact+Form+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=contact_form.php' ), 
-			array( 'facebook-button-plugin\/facebook-button-plugin.php', 'Facebook Like Button Plugin', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Facebook+Like+Button+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=facebook-button-plugin.php' ), 
-			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://bestwebsoft.com/plugin/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
-			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://bestwebsoft.com/plugin/portfolio-plugin/', 'http://bestwebsoft.com/plugin/portfolio-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=portfolio.php' ),
-			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://bestwebsoft.com/plugin/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=gallery-plugin.php' ),
-			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
-			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://bestwebsoft.com/plugin/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
-			array( 'quotes-and-tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://bestwebsoft.com/plugin/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' ),
-			array( 'google-sitemap-plugin\/google-sitemap-plugin.php', 'Google sitemap plugin', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Google+sitemap+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=google-sitemap-plugin.php' ),
-			array( 'updater\/updater.php', 'Updater', 'http://bestwebsoft.com/plugin/updater-plugin/', 'http://bestwebsoft.com/plugin/updater-plugin/#download', '/wp-admin/plugin-install.php?tab=search&s=updater+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=updater-options' )
-		);
-		foreach ( $array_plugins as $plugins ) {
-			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
-				$array_activate[$count_activate]["title"] = $plugins[1];
-				$array_activate[$count_activate]["link"] = $plugins[2];
-				$array_activate[$count_activate]["href"] = $plugins[3];
-				$array_activate[$count_activate]["url"]	= $plugins[5];
-				$count_activate++;
-			} else if ( array_key_exists(str_replace( "\\", "", $plugins[0]), $all_plugins ) ) {
-				$array_install[$count_install]["title"] = $plugins[1];
-				$array_install[$count_install]["link"]	= $plugins[2];
-				$array_install[$count_install]["href"]	= $plugins[3];
-				$count_install++;
-			} else {
-				$array_recomend[$count_recomend]["title"] = $plugins[1];
-				$array_recomend[$count_recomend]["link"] = $plugins[2];
-				$array_recomend[$count_recomend]["href"] = $plugins[3];
-				$array_recomend[$count_recomend]["slug"] = $plugins[4];
-				$count_recomend++;
-			}
-		}
-		$array_activate_pro = array();
-		$array_install_pro	= array();
-		$array_recomend_pro = array();
-		$count_activate_pro = $count_install_pro = $count_recomend_pro = 0;
-		$array_plugins_pro	= array(
-			array( 'gallery-plugin-pro\/gallery-plugin-pro.php', 'Gallery Pro', 'http://bestwebsoft.com/plugin/gallery-pro/?k=382e5ce7c96a6391f5ffa5e116b37fe0', 'http://bestwebsoft.com/plugin/gallery-pro/?k=382e5ce7c96a6391f5ffa5e116b37fe0#purchase', 'admin.php?page=gallery-plugin-pro.php' ),
-			array( 'contact-form-pro\/contact_form_pro.php', 'Contact Form Pro', 'http://bestwebsoft.com/plugin/contact-form-pro/?k=773dc97bb3551975db0e32edca1a6d71', 'http://bestwebsoft.com/plugin/contact-form-pro/?k=773dc97bb3551975db0e32edca1a6d71#purchase', 'admin.php?page=contact_form_pro.php' )
-		);
-		foreach ( $array_plugins_pro as $plugins ) {
-			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
-				$array_activate_pro[$count_activate_pro]["title"] = $plugins[1];
-				$array_activate_pro[$count_activate_pro]["link"] = $plugins[2];
-				$array_activate_pro[$count_activate_pro]["href"] = $plugins[3];
-				$array_activate_pro[$count_activate_pro]["url"]	= $plugins[4];
-				$count_activate_pro++;
-			} else if( array_key_exists(str_replace( "\\", "", $plugins[0]), $all_plugins ) ) {
-				$array_install_pro[$count_install_pro]["title"] = $plugins[1];
-				$array_install_pro[$count_install_pro]["link"]	= $plugins[2];
-				$array_install_pro[$count_install_pro]["href"]	= $plugins[3];
-				$count_install_pro++;
-			} else {
-				$array_recomend_pro[$count_recomend_pro]["title"] = $plugins[1];
-				$array_recomend_pro[$count_recomend_pro]["link"] = $plugins[2];
-				$array_recomend_pro[$count_recomend_pro]["href"] = $plugins[3];
-				$count_recomend_pro++;
-			}
-		}
-		
-		$sql_version = $wpdb->get_var( "SELECT VERSION() AS version" );
-	    $mysql_info = $wpdb->get_results( "SHOW VARIABLES LIKE 'sql_mode'" );
-	    if ( is_array( $mysql_info) )
-	    	$sql_mode = $mysql_info[0]->Value;
-	    if ( empty( $sql_mode ) )
-	    	$sql_mode = __( 'Not set', 'quotes_and_tips' );
-	    if ( ini_get( 'safe_mode' ) )
-	    	$safe_mode = __( 'On', 'quotes_and_tips' );
-	    else
-	    	$safe_mode = __( 'Off', 'quotes_and_tips' );
-	    if ( ini_get( 'allow_url_fopen' ) )
-	    	$allow_url_fopen = __( 'On', 'quotes_and_tips' );
-	    else
-	    	$allow_url_fopen = __( 'Off', 'quotes_and_tips' );
-	    if ( ini_get( 'upload_max_filesize' ) )
-	    	$upload_max_filesize = ini_get( 'upload_max_filesize' );
-	    else
-	    	$upload_max_filesize = __( 'N/A', 'quotes_and_tips' );
-	    if ( ini_get('post_max_size') )
-	    	$post_max_size = ini_get('post_max_size');
-	    else
-	    	$post_max_size = __( 'N/A', 'quotes_and_tips' );
-	    if ( ini_get( 'max_execution_time' ) )
-	    	$max_execution_time = ini_get( 'max_execution_time' );
-	    else
-	    	$max_execution_time = __( 'N/A', 'quotes_and_tips' );
-	    if ( ini_get( 'memory_limit' ) )
-	    	$memory_limit = ini_get( 'memory_limit' );
-	    else
-	    	$memory_limit = __( 'N/A', 'quotes_and_tips' );
-	    if ( function_exists( 'memory_get_usage' ) )
-	    	$memory_usage = round( memory_get_usage() / 1024 / 1024, 2 ) . __(' Mb', 'quotes_and_tips' );
-	    else
-	    	$memory_usage = __( 'N/A', 'quotes_and_tips' );
-	    if ( is_callable( 'exif_read_data' ) )
-	    	$exif_read_data = __( 'Yes', 'quotes_and_tips' ) . " ( V" . substr( phpversion( 'exif' ), 0,4 ) . ")" ;
-	    else
-	    	$exif_read_data = __( 'No', 'quotes_and_tips' );
-	    if ( is_callable( 'iptcparse' ) )
-	    	$iptcparse = __( 'Yes', 'quotes_and_tips' );
-	    else
-	    	$iptcparse = __( 'No', 'quotes_and_tips' );
-	    if ( is_callable( 'xml_parser_create' ) )
-	    	$xml_parser_create = __( 'Yes', 'quotes_and_tips' );
-	    else
-	    	$xml_parser_create = __( 'No', 'quotes_and_tips' );
-
-		if ( function_exists( 'wp_get_theme' ) )
-			$theme = wp_get_theme();
-		else
-			$theme = get_theme( get_current_theme() );
-
-		if ( function_exists( 'is_multisite' ) ) {
-			if ( is_multisite() ) {
-				$multisite = __( 'Yes', 'quotes_and_tips' );
-			} else {
-				$multisite = __( 'No', 'quotes_and_tips' );
-			}
-		} else
-			$multisite = __( 'N/A', 'quotes_and_tips' );
-
-		$site_url = get_option( 'siteurl' );
-		$home_url = get_option( 'home' );
-		$db_version = get_option( 'db_version' );
-		$system_info = array(
-			'system_info' => '',
-			'active_plugins' => '',
-			'inactive_plugins' => ''
-		);
-		$system_info['system_info'] = array(
-	        __( 'Operating System', 'quotes_and_tips' )				=> PHP_OS,
-	        __( 'Server', 'quotes_and_tips' )						=> $_SERVER["SERVER_SOFTWARE"],
-	        __( 'Memory usage', 'quotes_and_tips' )					=> $memory_usage,
-	        __( 'MYSQL Version', 'quotes_and_tips' )				=> $sql_version,
-	        __( 'SQL Mode', 'quotes_and_tips' )						=> $sql_mode,
-	        __( 'PHP Version', 'quotes_and_tips' )					=> PHP_VERSION,
-	        __( 'PHP Safe Mode', 'quotes_and_tips' )				=> $safe_mode,
-	        __( 'PHP Allow URL fopen', 'quotes_and_tips' )			=> $allow_url_fopen,
-	        __( 'PHP Memory Limit', 'quotes_and_tips' )				=> $memory_limit,
-	        __( 'PHP Max Upload Size', 'quotes_and_tips' )			=> $upload_max_filesize,
-	        __( 'PHP Max Post Size', 'quotes_and_tips' )			=> $post_max_size,
-	        __( 'PHP Max Script Execute Time', 'quotes_and_tips' )	=> $max_execution_time,
-	        __( 'PHP Exif support', 'quotes_and_tips' )				=> $exif_read_data,
-	        __( 'PHP IPTC support', 'quotes_and_tips' )				=> $iptcparse,
-	        __( 'PHP XML support', 'quotes_and_tips' )				=> $xml_parser_create,
-			__( 'Site URL', 'quotes_and_tips' )						=> $site_url,
-			__( 'Home URL', 'quotes_and_tips' )						=> $home_url,
-			__( 'WordPress Version', 'quotes_and_tips' )			=> $wp_version,
-			__( 'WordPress DB Version', 'quotes_and_tips' )			=> $db_version,
-			__( 'Multisite', 'quotes_and_tips' )					=> $multisite,
-			__( 'Active Theme', 'quotes_and_tips' )					=> $theme['Name'].' '.$theme['Version']
-		);
-		foreach ( $all_plugins as $path => $plugin ) {
-			if ( is_plugin_active( $path ) ) {
-				$system_info['active_plugins'][ $plugin['Name'] ] = $plugin['Version'];
-			} else {
-				$system_info['inactive_plugins'][ $plugin['Name'] ] = $plugin['Version'];
-			}
-		} 
-
-		if ( ( isset( $_REQUEST['bwsmn_form_submit'] ) && check_admin_referer( plugin_basename(__FILE__), 'bwsmn_nonce_submit' ) ) ||
-			 ( isset( $_REQUEST['bwsmn_form_submit_custom_email'] ) && check_admin_referer( plugin_basename(__FILE__), 'bwsmn_nonce_submit_custom_email' ) ) ) {
-			if ( isset( $_REQUEST['bwsmn_form_email'] ) ) {
-				$bwsmn_form_email = trim( $_REQUEST['bwsmn_form_email'] );
-				if( $bwsmn_form_email == "" || !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", $bwsmn_form_email ) ) {
-					$error = __( "Please enter a valid email address.", 'quotes_and_tips' );
-				} else {
-					$email = $bwsmn_form_email;
-					$bwsmn_form_email = '';
-					$message = __( 'Email with system info is sent to ', 'quotes_and_tips' ) . $email;			
-				}
-			} else {
-				$email = 'plugin_system_status@bestwebsoft.com';
-				$message = __( 'Thank you for contacting us.', 'quotes_and_tips' );
-			}
-
-			if ( $error == '' ) {
-				$headers  = 'MIME-Version: 1.0' . "\n";
-				$headers .= 'Content-type: text/html; charset=utf-8' . "\n";
-				$headers .= 'From: ' . get_option( 'admin_email' );
-				$message_text = '<html><head><title>System Info From ' . $home_url . '</title></head><body>
-				<h4>Environment</h4>
-				<table>';
-				foreach ( $system_info['system_info'] as $key => $value ) {
-					$message_text .= '<tr><td>'. $key .'</td><td>'. $value .'</td></tr>';	
-				}
-				$message_text .= '</table>
-				<h4>Active Plugins</h4>
-				<table>';
-				foreach ( $system_info['active_plugins'] as $key => $value ) {	
-					$message_text .= '<tr><td scope="row">'. $key .'</td><td scope="row">'. $value .'</td></tr>';	
-				}
-				$message_text .= '</table>
-				<h4>Inactive Plugins</h4>
-				<table>';
-				foreach ( $system_info['inactive_plugins'] as $key => $value ) {
-					$message_text .= '<tr><td scope="row">'. $key .'</td><td scope="row">'. $value .'</td></tr>';
-				}
-				$message_text .= '</table></body></html>';
-				$result = wp_mail( $email, 'System Info From ' . $home_url, $message_text, $headers );
-				if ( $result != true )
-					$error = __( "Sorry, email message could not be delivered.", 'quotes_and_tips' );
-			}
-		}
-		?><div class="wrap">
-			<div class="icon32 icon32-bws" id="icon-options-general"></div>
-			<h2><?php echo $title;?></h2>
-			<div class="updated fade" <?php if( !( isset( $_REQUEST['bwsmn_form_submit'] ) || isset( $_REQUEST['bwsmn_form_submit_custom_email'] ) ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
-			<div class="error" <?php if ( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-			<h3 style="color: blue;"><?php _e( 'Pro plugins', 'quotes_and_tips' ); ?></h3>
-			<?php if( 0 < $count_activate_pro ) { ?>
-			<div style="padding-left:15px;">
-				<h4><?php _e( 'Activated plugins', 'quotes_and_tips' ); ?></h4>
-				<?php foreach ( $array_activate_pro as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'quotes_and_tips' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'quotes_and_tips' ); ?></a></p>
-				<?php } ?>
-			</div>
-			<?php } ?>
-			<?php if( 0 < $count_install_pro ) { ?>
-			<div style="padding-left:15px;">
-				<h4><?php _e( 'Installed plugins', 'quotes_and_tips' ); ?></h4>
-				<?php foreach ( $array_install_pro as $install_plugin) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'quotes_and_tips' ); ?></a></p>
-				<?php } ?>
-			</div>
-			<?php } ?>
-			<?php if( 0 < $count_recomend_pro ) { ?>
-			<div style="padding-left:15px;">
-				<h4><?php _e( 'Recommended plugins', 'quotes_and_tips' ); ?></h4>
-				<?php foreach ( $array_recomend_pro as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'quotes_and_tips' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Purchase", 'quotes_and_tips' ); ?></a></p>
-				<?php } ?>
-			</div>
-			<?php } ?>
-			<br />
-			<h3 style="color: green"><?php _e( 'Free plugins', 'quotes_and_tips' ); ?></h3>
-			<?php if( 0 < $count_activate ) { ?>
-			<div style="padding-left:15px;">
-				<h4><?php _e( 'Activated plugins', 'quotes_and_tips' ); ?></h4>
-				<?php foreach( $array_activate as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'quotes_and_tips' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'quotes_and_tips' ); ?></a></p>
-				<?php } ?>
-			</div>
-			<?php } ?>
-			<?php if( 0 < $count_install ) { ?>
-			<div style="padding-left:15px;">
-				<h4><?php _e( 'Installed plugins', 'quotes_and_tips' ); ?></h4>
-				<?php foreach ( $array_install as $install_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'quotes_and_tips' ); ?></a></p>
-				<?php } ?>
-			</div>
-			<?php } ?>
-			<?php if( 0 < $count_recomend ) { ?>
-			<div style="padding-left:15px;">
-				<h4><?php _e( 'Recommended plugins', 'quotes_and_tips' ); ?></h4>
-				<?php foreach ( $array_recomend as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'quotes_and_tips' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Download", 'quotes_and_tips' ); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin["slug"]; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin["title"] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'quotes_and_tips' ) ?></a></p>
-				<?php } ?>
-			</div>
-			<?php } ?>	
-			<br />		
-			<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'quotes_and_tips' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
-			<div id="poststuff" class="bws_system_info_mata_box">
-				<div class="postbox">
-					<div class="handlediv" title="Click to toggle">
-						<br>
-					</div>
-					<h3 class="hndle">
-						<span><?php _e( 'System status', 'quotes_and_tips' ); ?></span>
-					</h3>
-					<div class="inside">
-						<table class="bws_system_info">
-							<thead><tr><th><?php _e( 'Environment', 'quotes_and_tips' ); ?></th><td></td></tr></thead>
-							<tbody>
-							<?php foreach ( $system_info['system_info'] as $key => $value ) { ?>	
-								<tr>
-									<td scope="row"><?php echo $key; ?></td>
-									<td scope="row"><?php echo $value; ?></td>
-								</tr>	
-							<?php } ?>
-							</tbody>
-						</table>
-						<table class="bws_system_info">
-							<thead><tr><th><?php _e( 'Active Plugins', 'quotes_and_tips' ); ?></th><th></th></tr></thead>
-							<tbody>
-							<?php foreach ( $system_info['active_plugins'] as $key => $value ) { ?>	
-								<tr>
-									<td scope="row"><?php echo $key; ?></td>
-									<td scope="row"><?php echo $value; ?></td>
-								</tr>	
-							<?php } ?>
-							</tbody>
-						</table>
-						<table class="bws_system_info">
-							<thead><tr><th><?php _e( 'Inactive Plugins', 'quotes_and_tips' ); ?></th><th></th></tr></thead>
-							<tbody>
-							<?php foreach ( $system_info['inactive_plugins'] as $key => $value ) { ?>	
-								<tr>
-									<td scope="row"><?php echo $key; ?></td>
-									<td scope="row"><?php echo $value; ?></td>
-								</tr>	
-							<?php } ?>
-							</tbody>
-						</table>
-						<div class="clear"></div>						
-						<form method="post" action="admin.php?page=bws_plugins">
-							<p>			
-								<input type="hidden" name="bwsmn_form_submit" value="submit" />
-								<input type="submit" class="button-primary" value="<?php _e( 'Send to support', 'quotes_and_tips' ) ?>" />
-								<?php wp_nonce_field( plugin_basename(__FILE__), 'bwsmn_nonce_submit' ); ?>		
-							</p>		
-						</form>				
-						<form method="post" action="admin.php?page=bws_plugins">	
-							<p>			
-								<input type="hidden" name="bwsmn_form_submit_custom_email" value="submit" />						
-								<input type="submit" class="button" value="<?php _e( 'Send to custom email &#187;', 'quotes_and_tips' ) ?>" />
-								<input type="text" value="<?php echo $bwsmn_form_email; ?>" name="bwsmn_form_email" />
-								<?php wp_nonce_field( plugin_basename(__FILE__), 'bwsmn_nonce_submit_custom_email' ); ?>
-							</p>				
-						</form>						
-					</div>
-				</div>
-			</div>
-		</div>
-	<?php }
-}
-
-if( ! function_exists( 'add_qtsndtps_admin_menu' ) ) {
+if ( ! function_exists( 'add_qtsndtps_admin_menu' ) ) {
 	function add_qtsndtps_admin_menu() {
-		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url("images/px.png", __FILE__), 1001); 
-		$qtsndtps_admin_menu = add_submenu_page('bws_plugins', __( 'Quotes and Tips', 'quotes_and_tips' ), __( 'Quotes and Tips', 'quotes_and_tips' ), 'manage_options', "quotes-and-tips.php", 'qtsndtps_settings_page');
-
+		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url("images/px.png", __FILE__), 1001 ); 
+		add_submenu_page( 'bws_plugins', __( 'Quotes and Tips', 'quotes_and_tips' ), __( 'Quotes and Tips', 'quotes_and_tips' ), 'manage_options', "quotes-and-tips.php", 'qtsndtps_settings_page' );
 	}
 }
 
-if( ! function_exists( 'qtsndtps_register_tips_post_type' ) ) {
+if ( ! function_exists( 'qtsndtps_register_tips_post_type' ) ) {
 	function qtsndtps_register_tips_post_type() {
 		$args = array(
-			'label'						=> __( 'Tips', 'quotes_and_tips' ),
-			'singular_label'	=> __( 'Tips', 'quotes_and_tips' ),
-			'public'					=> true,
-			'show_ui'					=> true,
-			'capability_type' => 'post',
-			'hierarchical'		=> false,
-			'rewrite'					=> true,
+			'label'					=> __( 'Tips', 'quotes_and_tips' ),
+			'singular_label'		=> __( 'Tips', 'quotes_and_tips' ),
+			'public'				=> true,
+			'show_ui'				=> true,
+			'capability_type' 		=> 'post',
+			'hierarchical'			=> false,
+			'rewrite'				=> true,
 			'supports'				=> array( 'title', 'editor' ),
-			'labels'					=> array(
+			'labels'				=> array(
 				'add_new_item'			=> __( 'Add a new tip', 'quotes_and_tips' ),
-				'edit_item'					=> __( 'Edit tips', 'quotes_and_tips' ),
-				'new_item'					=> __( 'New tip', 'quotes_and_tips' ),
-				'view_item'					=> __( 'View tips', 'quotes_and_tips' ),
+				'edit_item'				=> __( 'Edit tips', 'quotes_and_tips' ),
+				'new_item'				=> __( 'New tip', 'quotes_and_tips' ),
+				'view_item'				=> __( 'View tips', 'quotes_and_tips' ),
 				'search_items'			=> __( 'Search tips', 'quotes_and_tips' ),
-				'not_found'					=> __( 'No tips found', 'quotes_and_tips' ),
-				'not_found_in_trash'=> __( 'No tips found in Trash', 'quotes_and_tips' )
+				'not_found'				=> __( 'No tips found', 'quotes_and_tips' ),
+				'not_found_in_trash'	=> __( 'No tips found in Trash', 'quotes_and_tips' )
 			)
 		);
 		register_post_type( 'tips' , $args );
@@ -402,27 +62,27 @@ if( ! function_exists( 'qtsndtps_register_tips_post_type' ) ) {
 if( ! function_exists( 'qtsndtps_register_quote_post_type' ) ) {
 	function qtsndtps_register_quote_post_type() {
 		$args = array(
-			'label'						=> __( 'Quotes', 'quotes_and_tips' ),
-			'singular_label'	=> __( 'Quotes', 'quotes_and_tips' ),
-			'public'					=> true,
-			'show_ui'					=> true,
-			'capability_type' => 'post',
-			'hierarchical'		=> false,
-			'rewrite'					=> true,
+			'label'					=> __( 'Quotes', 'quotes_and_tips' ),
+			'singular_label'		=> __( 'Quotes', 'quotes_and_tips' ),
+			'public'				=> true,
+			'show_ui'				=> true,
+			'capability_type'		=> 'post',
+			'hierarchical'			=> false,
+			'rewrite'				=> true,
 			'supports'				=> array( 'title', 'editor' ),
-			'labels'					=> array(
+			'labels'				=> array(
 				'add_new_item'			=> __( 'Add a New quote', 'quotes_and_tips' ),
-				'edit_item'					=> __( 'Edit quote', 'quotes_and_tips' ),
-				'new_item'					=> __( 'New quote', 'quotes_and_tips' ),
-				'view_item'					=> __( 'View quote', 'quotes_and_tips' ),
+				'edit_item'				=> __( 'Edit quote', 'quotes_and_tips' ),
+				'new_item'				=> __( 'New quote', 'quotes_and_tips' ),
+				'view_item'				=> __( 'View quote', 'quotes_and_tips' ),
 				'search_items'			=> __( 'Search quote', 'quotes_and_tips' ),
-				'not_found'					=> __( 'No quote found', 'quotes_and_tips' ),
-				'not_found_in_trash'=> __( 'No quote found in Trash', 'quotes_and_tips' )
+				'not_found'				=> __( 'No quote found', 'quotes_and_tips' ),
+				'not_found_in_trash'	=> __( 'No quote found in Trash', 'quotes_and_tips' )
 			),
-			'public'					=> true,
+			'public'				=> true,
 			'supports'				=> array( 'title', 'editor', 'thumbnail', 'comments' ),
-			'capability_type'	=> 'post',
-			'rewrite'					=> array( "slug" => "quote" )
+			'capability_type'		=> 'post',
+			'rewrite'				=> array( "slug" => "quote" )
 		);
 		register_post_type( 'quote' , $args );
 	}
@@ -482,7 +142,7 @@ if( ! function_exists( 'qtsndtps_get_random_tip_quote' ) ) {
 	<?php }
 }
 
-if( ! function_exists( 'qtsndtps_quote_custom_metabox' ) ) {
+if ( ! function_exists( 'qtsndtps_quote_custom_metabox' ) ) {
 	function qtsndtps_quote_custom_metabox() {
 		global $post;
 		$name_field = get_post_meta( $post->ID, 'name_field') ;
@@ -497,7 +157,7 @@ if( ! function_exists( 'qtsndtps_quote_custom_metabox' ) ) {
 	}
 }
 
-if( ! function_exists( 'qtsndtps_save_custom_quote' ) ) {
+if ( ! function_exists( 'qtsndtps_save_custom_quote' ) ) {
 	function qtsndtps_save_custom_quote( $post_id ) {
 		global $post;	
 		if( ( ( isset( $_POST['name_field'] ) && $_POST['name_field'] != '' ) || ( isset( $_POST['off_cap'] ) && $_POST['off_cap'] != '' ) ) && check_admin_referer( plugin_basename(__FILE__), 'qtsndtps_nonce_name' ) ) {
@@ -507,7 +167,7 @@ if( ! function_exists( 'qtsndtps_save_custom_quote' ) ) {
 	}
 }
 
-if( ! function_exists( 'qtsndtps_add_custom_metabox' ) ) {
+if ( ! function_exists( 'qtsndtps_add_custom_metabox' ) ) {
 	function qtsndtps_add_custom_metabox() {
 		add_meta_box( 'custom-metabox', __( 'Name and Official position', 'quotes_and_tips' ), 'qtsndtps_quote_custom_metabox', 'quote', 'normal', 'high' );
 	}
@@ -516,8 +176,7 @@ if( ! function_exists( 'qtsndtps_add_custom_metabox' ) ) {
 // register settings function
 if( ! function_exists( 'register_qtsndtps_settings' ) ) {
 	function register_qtsndtps_settings() {
-		global $wpmu;
-		global $qtsndtps_options;
+		global $wpmu, $qtsndtps_options;
 
 		$qtsndtps_options_defaults = array(
 			'qtsndtps_page_load'				=> '1',
@@ -538,33 +197,32 @@ if( ! function_exists( 'register_qtsndtps_settings' ) ) {
 
 		// install the option defaults
 		if ( 1 == $wpmu ) {
-			if( ! get_site_option( 'qtsndtps_options' ) ) {
+			if ( ! get_site_option( 'qtsndtps_options' ) ) {
 				add_site_option( 'qtsndtps_options', $qtsndtps_options_defaults, '', 'yes' );
 			}
-		} 
-		else {
+		} else {
 			if( ! get_option( 'qtsndtps_options' ) )
 				add_option( 'qtsndtps_options', $qtsndtps_options_defaults, '', 'yes' );
 		}
 
 		// get options from the database
 		if ( 1 == $wpmu )
-		 $qtsndtps_options = get_site_option( 'qtsndtps_options' ); // get options from the database
+			$qtsndtps_options = get_site_option( 'qtsndtps_options' ); // get options from the database
 		else
-		 $qtsndtps_options = get_option( 'qtsndtps_options' );// get options from the database
+			$qtsndtps_options = get_option( 'qtsndtps_options' );// get options from the database
 
 		// array merge incase this version has added new options
 		$qtsndtps_options = array_merge( $qtsndtps_options_defaults, $qtsndtps_options );
 	}
 }
 
-if( ! function_exists( 'qtsndtps_settings_page' ) ) {
+if ( ! function_exists( 'qtsndtps_settings_page' ) ) {
 	function qtsndtps_settings_page() {
 		global $qtsndtps_options;
 		$error = "";
 
 		// Save data for settings page
-		if( isset( $_REQUEST['qtsndtps_form_submit'] ) && check_admin_referer( plugin_basename(__FILE__), 'qtsndtps_nonce_name' ) ) {
+		if ( isset( $_REQUEST['qtsndtps_form_submit'] ) && check_admin_referer( plugin_basename(__FILE__), 'qtsndtps_nonce_name' ) ) {
 			$qtsndtps_request_options = array();
 			$qtsndtps_request_options['qtsndtps_page_load']					= $_REQUEST['qtsndtps_page_load'];
 			$qtsndtps_request_options['qtsndtps_interval_load']			= $_REQUEST['qtsndtps_interval_load'];
@@ -580,7 +238,7 @@ if( ! function_exists( 'qtsndtps_settings_page' ) ) {
 			$qtsndtps_request_options['qtsndtps_background_image_repeat_x']	= isset( $_REQUEST['qtsndtps_background_image_repeat_x'] ) ? 1 : 0 ;
 			$qtsndtps_request_options['qtsndtps_background_image_repeat_y']	= isset( $_REQUEST['qtsndtps_background_image_repeat_y'] ) ? 1 : 0 ;
 			
-			if( isset( $_FILES["qtsndtps_background_image"]['name'] ) && ! empty( $_FILES["qtsndtps_background_image"]['name'] ) ) {
+			if ( isset( $_FILES["qtsndtps_background_image"]['name'] ) && ! empty( $_FILES["qtsndtps_background_image"]['name'] ) ) {
 				$images = get_posts( array( 'post_type' => 'attachment', 'meta_key' => '_wp_attachment_qtsndtp_background_image', 'meta_value' => get_option('stylesheet'), 'orderby' => 'none', 'nopaging' => true ) );
 				if( ! empty ( $images ) )
 					wp_delete_attachment( $images[0]->ID );
@@ -625,7 +283,6 @@ if( ! function_exists( 'qtsndtps_settings_page' ) ) {
 			update_option( 'qtsndtps_options', $qtsndtps_options, '', 'yes' );
 			$message = __( "Settings saved", 'quotes_and_tips' );
 		}
-
 		// Display form on the setting page
 	?>
 	<div class="wrap">
@@ -728,10 +385,10 @@ if( ! function_exists( 'qtsndtps_settings_page' ) ) {
 	<?php } 
 }
 
-if( ! function_exists( 'qtsndtps_register_plugin_links' ) ) {
-	function qtsndtps_register_plugin_links($links, $file) {
+if ( ! function_exists( 'qtsndtps_register_plugin_links' ) ) {
+	function qtsndtps_register_plugin_links( $links, $file ) {
 		$base = plugin_basename(__FILE__);
-		if ($file == $base) {
+		if ( $file == $base ) {
 			$links[] = '<a href="admin.php?page=quotes-and-tips.php">' . __( 'Settings', 'quotes_and_tips' ) . '</a>';
 			$links[] = '<a href="http://wordpress.org/extend/plugins/quotes-and-tips/faq/" target="_blank">' . __( 'FAQ', 'quotes_and_tips' ) . '</a>';
 			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'quotes_and_tips' ) . '</a>';
@@ -740,16 +397,16 @@ if( ! function_exists( 'qtsndtps_register_plugin_links' ) ) {
 	}
 }
 
-if( ! function_exists( 'qtsndtps_plugin_action_links' ) ) {
+if ( ! function_exists( 'qtsndtps_plugin_action_links' ) ) {
 	function qtsndtps_plugin_action_links( $links, $file ) {
-			//Static so we don't call plugin_basename on every plugin row.
+		//Static so we don't call plugin_basename on every plugin row.
 		static $this_plugin;
 		if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__);
 
-		if ( $file == $this_plugin ){
-				 $settings_link = '<a href="admin.php?page=quotes-and-tips.php">' . __( 'Settings', 'quotes_and_tips' ) . '</a>';
-				 array_unshift( $links, $settings_link );
-			}
+		if ( $file == $this_plugin ) {
+			$settings_link = '<a href="admin.php?page=quotes-and-tips.php">' . __( 'Settings', 'quotes_and_tips' ) . '</a>';
+			array_unshift( $links, $settings_link );
+		}
 		return $links;
 	} // end function qtsndtps_plugin_action_links
 }
@@ -757,6 +414,7 @@ if( ! function_exists( 'qtsndtps_plugin_action_links' ) ) {
 if ( ! function_exists ( 'qtsndtps_plugin_init' ) ) {
 	function qtsndtps_plugin_init() {
 		load_plugin_textdomain( 'quotes_and_tips', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+		load_plugin_textdomain( 'bestwebsoft', false, dirname( plugin_basename( __FILE__ ) ) . '/bws_menu/languages/' ); 
 	}
 }
 
@@ -764,16 +422,16 @@ if ( ! function_exists ( 'qtsndtps_print_style_script' ) ) {
 	function qtsndtps_print_style_script() {
 		global $qtsndtps_options;
 
-		$background_color					= $qtsndtps_options['qtsndtps_background_color'];
-		$text_color								= $qtsndtps_options['qtsndtps_text_color'];
+		$background_color				= $qtsndtps_options['qtsndtps_background_color'];
+		$text_color						= $qtsndtps_options['qtsndtps_text_color'];
 		$background_image_use			= $qtsndtps_options['qtsndtps_background_image_use'];
-		$background_image					= $qtsndtps_options['qtsndtps_background_image'];
+		$background_image				= $qtsndtps_options['qtsndtps_background_image'];
 		$background_gposition			= $qtsndtps_options['qtsndtps_background_image_gposition'];
 		$background_vposition			= $qtsndtps_options['qtsndtps_background_image_vposition'];
 		$background_repeat_x			= $qtsndtps_options['qtsndtps_background_image_repeat_x'];
 		$background_repeat_y			= $qtsndtps_options['qtsndtps_background_image_repeat_y'];
-		$interval_load						= $qtsndtps_options['qtsndtps_interval_load'];
-		$page_load								= $qtsndtps_options['qtsndtps_page_load'];
+		$interval_load					= $qtsndtps_options['qtsndtps_interval_load'];
+		$page_load						= $qtsndtps_options['qtsndtps_page_load'];
 
 		if ( $background_color == '#2484C6' && $background_color == '#FFFFFF' && empty ( $background_image ) )
 			return;

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
-Tested up to: 3.5.2
-Stable tag: 1.11
+Tested up to: 3.6
+Stable tag: 1.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,10 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V1.12 - 04.09.2013 =
+* Update : We updated all functionality for wordpress 3.6.
+* Update : Function for displaying BWS plugins section placed in a separate file and has own language files.
+
 = V1.11 - 18.07.2013 =
 * NEW : Added an ability to view and send system information by mail.
 * Update : We updated all functionality for wordpress 3.5.2.
@@ -134,6 +138,9 @@ Here is an example for the German language files.
 
 == Upgrade Notice ==
 
+= V1.12 =
+We updated all functionality for wordpress 3.6. Function for displaying BWS plugins section placed in a separate file and has own language files.
+
 = V1.11 =
 Added an ability to view and send system information by mail. We updated all functionality for wordpress 3.5.2.
 
@@ -166,4 +173,3 @@ BWS plugins section has been changed.
 
 = V1.01 =
 Additional options for Settings plugin page are added. Added The Russian language file is added to the plugin.
-
