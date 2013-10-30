@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: quotes_and_tips\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-04 14:43+0300\n"
-"PO-Revision-Date: 2013-09-04 14:43+0300\n"
+"POT-Creation-Date: 2013-10-30 15:33+0300\n"
+"PO-Revision-Date: 2013-10-30 15:33+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Language: Hebrew\n"
 "X-Poedit-Country: ISRAEL\n"
@@ -20,92 +20,92 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:32
+#: quotes-and-tips.php:33
 msgid "Quotes and Tips"
 msgstr "ציטוטים וטיפים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:39
 #: quotes-and-tips.php:40
+#: quotes-and-tips.php:41
 #: quotes-and-tips.php:183
 msgid "Tips"
 msgstr "טיפים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:48
+#: quotes-and-tips.php:49
 #, fuzzy
 msgid "Add a new tip"
 msgstr "הוסף טיפים חדשים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:49
+#: quotes-and-tips.php:50
 msgid "Edit tips"
 msgstr "ערוך טיפים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:50
+#: quotes-and-tips.php:51
 #, fuzzy
 msgid "New tip"
 msgstr "טיפים חדשים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:51
+#: quotes-and-tips.php:52
 msgid "View tips"
 msgstr "הצג טיפים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:52
+#: quotes-and-tips.php:53
 msgid "Search tips"
 msgstr "חפש טיפים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:53
+#: quotes-and-tips.php:54
 msgid "No tips found"
 msgstr "לא נמצאו טיפים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:54
+#: quotes-and-tips.php:55
 msgid "No tips found in Trash"
 msgstr "לא נמצאו טיפים בפח"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:64
 #: quotes-and-tips.php:65
+#: quotes-and-tips.php:66
 msgid "Quotes"
 msgstr "ציטוטים"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:73
+#: quotes-and-tips.php:74
 msgid "Add a New quote"
 msgstr "הוסף ציטוט חדש"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:74
+#: quotes-and-tips.php:75
 msgid "Edit quote"
 msgstr "ערוך ציטוט"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:75
+#: quotes-and-tips.php:76
 msgid "New quote"
 msgstr "ציטוט חדש"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:76
+#: quotes-and-tips.php:77
 msgid "View quote"
 msgstr "הצג ציטוט"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:77
+#: quotes-and-tips.php:78
 msgid "Search quote"
 msgstr "חיפוש ציטוט"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:78
+#: quotes-and-tips.php:79
 msgid "No quote found"
 msgstr "לא נמצאו ציטטות"
 
 # @ quotes_and_tips
-#: quotes-and-tips.php:79
+#: quotes-and-tips.php:80
 msgid "No quote found in Trash"
 msgstr "לא נמצאו ציטטות בפח"
 
@@ -320,10 +320,23 @@ msgstr "שאלות ותשובות"
 msgid "Support"
 msgstr "תמיכה"
 
+#: quotes-and-tips.php:582
+msgid "requires"
+msgstr ""
+
+#: quotes-and-tips.php:582
+msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
+msgstr ""
+
+#: quotes-and-tips.php:582
+msgid "Back to the WordPress "
+msgstr ""
+
 # @ quotes_and_tips
+#: quotes-and-tips.php:582
 #, fuzzy
-#~ msgid "Pro plugins"
-#~ msgstr "תוספים מומלצים"
+msgid "Plugins page"
+msgstr "תוספים מומלצים"
 
 # @ quotes_and_tips
 #~ msgid "Activated plugins"

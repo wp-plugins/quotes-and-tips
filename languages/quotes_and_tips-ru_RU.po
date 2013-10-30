@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: quotes_and_tips\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-04 14:43+0300\n"
-"PO-Revision-Date: 2013-09-04 14:43+0300\n"
+"POT-Creation-Date: 2013-10-30 15:33+0300\n"
+"PO-Revision-Date: 2013-10-30 15:33+0300\n"
 "Last-Translator: \n"
-"Language-Team: BestWebSoft <plugin@bestwebsoft.com>\n"
+"Language-Team: bestwebsoft <plugin@bestwebsoft.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Language: Russian\n"
@@ -17,74 +17,74 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: quotes-and-tips.php:32
+#: quotes-and-tips.php:33
 msgid "Quotes and Tips"
 msgstr "Цитаты и Подсказки"
 
-#: quotes-and-tips.php:39
 #: quotes-and-tips.php:40
+#: quotes-and-tips.php:41
 #: quotes-and-tips.php:183
 msgid "Tips"
 msgstr "Подсказки"
 
-#: quotes-and-tips.php:48
+#: quotes-and-tips.php:49
 msgid "Add a new tip"
 msgstr "Добавить новые подсказки"
 
-#: quotes-and-tips.php:49
+#: quotes-and-tips.php:50
 msgid "Edit tips"
 msgstr "Редактировать подсказки"
 
-#: quotes-and-tips.php:50
+#: quotes-and-tips.php:51
 msgid "New tip"
 msgstr "Новая подсказка"
 
-#: quotes-and-tips.php:51
+#: quotes-and-tips.php:52
 msgid "View tips"
 msgstr "Просмотреть подсказки"
 
-#: quotes-and-tips.php:52
+#: quotes-and-tips.php:53
 msgid "Search tips"
 msgstr "Поиск подсказок"
 
-#: quotes-and-tips.php:53
+#: quotes-and-tips.php:54
 msgid "No tips found"
 msgstr "Ни одной подсказки не найдено"
 
-#: quotes-and-tips.php:54
+#: quotes-and-tips.php:55
 msgid "No tips found in Trash"
 msgstr "Ни одной подсказки в корзине не найдено"
 
-#: quotes-and-tips.php:64
 #: quotes-and-tips.php:65
+#: quotes-and-tips.php:66
 msgid "Quotes"
 msgstr "Цитаты"
 
-#: quotes-and-tips.php:73
+#: quotes-and-tips.php:74
 msgid "Add a New quote"
 msgstr "Добавить новую цитату"
 
-#: quotes-and-tips.php:74
+#: quotes-and-tips.php:75
 msgid "Edit quote"
 msgstr "Редактировать цитату"
 
-#: quotes-and-tips.php:75
+#: quotes-and-tips.php:76
 msgid "New quote"
 msgstr "Новая цитата"
 
-#: quotes-and-tips.php:76
+#: quotes-and-tips.php:77
 msgid "View quote"
 msgstr "Просмотреть цитату"
 
-#: quotes-and-tips.php:77
+#: quotes-and-tips.php:78
 msgid "Search quote"
 msgstr "Поиск цитаты"
 
-#: quotes-and-tips.php:78
+#: quotes-and-tips.php:79
 msgid "No quote found"
 msgstr "Ни одной цитаты не найдено"
 
-#: quotes-and-tips.php:79
+#: quotes-and-tips.php:80
 msgid "No quote found in Trash"
 msgstr "Ни одной цитаты в корзине не найдено"
 
@@ -251,118 +251,19 @@ msgstr "FAQ"
 msgid "Support"
 msgstr "Поддержка"
 
-#~ msgid "Not set"
-#~ msgstr "Не задан"
-#~ msgid "On"
-#~ msgstr "Вкл"
-#~ msgid "Off"
-#~ msgstr "Выкл"
-#~ msgid "N/A"
-#~ msgstr "Неизвестно"
-#~ msgid " Mb"
-#~ msgstr " Mb"
-#~ msgid "Yes"
-#~ msgstr "Да"
-#~ msgid "No"
-#~ msgstr "Нет"
-#~ msgid "Operating System"
-#~ msgstr "Операционная система"
-#~ msgid "Server"
-#~ msgstr "Тип сервера"
-#~ msgid "Memory usage"
-#~ msgstr "Памяти использовано"
-#~ msgid "MYSQL Version"
-#~ msgstr "Версия MYSQL"
-#~ msgid "SQL Mode"
-#~ msgstr "Режим SQL"
-#~ msgid "PHP Version"
-#~ msgstr "Версия PHP"
-#~ msgid "PHP Safe Mode"
-#~ msgstr "PHP Safe Mode"
-#~ msgid "PHP Allow URL fopen"
-#~ msgstr "PHP Allow URL fopen"
-#~ msgid "PHP Memory Limit"
-#~ msgstr "Лимит памяти"
-#~ msgid "PHP Max Upload Size"
-#~ msgstr "Макс. размер загружаемого файла"
-#~ msgid "PHP Max Post Size"
-#~ msgstr "Макс. размер записи"
-#~ msgid "PHP Max Script Execute Time"
-#~ msgstr "Макс. время выполнения сценария"
-#~ msgid "PHP Exif support"
-#~ msgstr "Поддержка PHP Exif"
-#~ msgid "PHP IPTC support"
-#~ msgstr "Поддержка PHP IPTC"
-#~ msgid "PHP XML support"
-#~ msgstr "Поддержка PHP XML"
-#~ msgid "Site URL"
-#~ msgstr "Адрес сайта"
-#~ msgid "Home URL"
-#~ msgstr "Основной адрес сайта"
-#~ msgid "WordPress Version"
-#~ msgstr "Версия WordPress"
-#~ msgid "WordPress DB Version"
-#~ msgstr "Версия базы данных WordPress"
-#~ msgid "Multisite"
-#~ msgstr "Мультиблог"
-#~ msgid "Active Theme"
-#~ msgstr "Текущая тема"
-#~ msgid "Please enter a valid email address."
-#~ msgstr "Пожалуйста, введите валидный email."
-#~ msgid "Email with system info is sent to "
-#~ msgstr "E-mail с системной информацией отправлен на"
-#~ msgid "Thank you for contacting us."
-#~ msgstr "Спасибо, что связались с нами."
-#~ msgid "Sorry, email message could not be delivered."
-#~ msgstr "Извините, ваш email не может быть отправлен."
-#~ msgid "Pro plugins"
-#~ msgstr "Pro плагины"
-#~ msgid "Activated plugins"
-#~ msgstr "Активированные плагины"
-#~ msgid "Read more"
-#~ msgstr "Подробнее..."
-#~ msgid "Installed plugins"
-#~ msgstr "Установленные плагины"
-#~ msgid "Recommended plugins"
-#~ msgstr "Рекомендованные к установке плагины"
-#~ msgid "Purchase"
-#~ msgstr "Купить"
-#~ msgid "Free plugins"
-#~ msgstr "Бесплатные плагины"
-#~ msgid "Download"
-#~ msgstr "Скачать"
-#~ msgid "Install %s"
-#~ msgstr "Установлено %s"
-#~ msgid "Install now from wordpress.org"
-#~ msgstr "Установить с wordpress.org"
-#~ msgid "If you have any questions, please contact us via"
-#~ msgstr "Если у вас есть какие-то вопросы, обращайтесь на"
-#~ msgid "System status"
-#~ msgstr "Системная информация"
-#~ msgid "Environment"
-#~ msgstr "Системная среда"
-#~ msgid "Active Plugins"
-#~ msgstr "Активированные плагины"
-#~ msgid "Inactive Plugins"
-#~ msgstr "Неактивированные плагины"
-#~ msgid "Send to support"
-#~ msgstr "Отправить в тех.поддержку"
-#~ msgid "Send to custom email &#187;"
-#~ msgstr "Отправить на емейл &#187;"
-#~ msgid ""
-#~ "If you have any questions, please contact us via plugin@bestwebsoft.com "
-#~ "or fill out the contact form on our website"
-#~ msgstr ""
-#~ "Если у вас есть какие-то вопросы, обращайтесь на plugin@bestwebsoft.com "
-#~ "или заполните контактную форму на нашем сайте"
-#~ msgid "Options saved."
-#~ msgstr "Натсройки сохранены."
-#~ msgid "Show randomly on page load"
-#~ msgstr "Показать случайным образом при загрузке страницы"
-#~ msgid "Time for reload (sec)"
-#~ msgstr "Время перезагрузки (в секундах)"
-#~ msgid "Repeat x"
-#~ msgstr "По горизонтали (х)"
-#~ msgid "Repeat y"
-#~ msgstr "По вертикали (у)"
+#: quotes-and-tips.php:582
+msgid "requires"
+msgstr "требует"
+
+#: quotes-and-tips.php:582
+msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
+msgstr "или выше и, поэтому он был деактивирован! Пожалуйста обновите WordPress и попробуйте еще раз."
+
+#: quotes-and-tips.php:582
+msgid "Back to the WordPress "
+msgstr "Вернуться назад на "
+
+#: quotes-and-tips.php:582
+msgid "Plugins page"
+msgstr "Страницу плагинов"
 

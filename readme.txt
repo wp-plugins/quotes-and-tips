@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
-Tested up to: 3.6.1
-Stable tag: 1.13
+Tested up to: 3.7.1
+Stable tag: 1.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ This plugin allows you to implement the Quotes & Tips block into your web site.
 
 This plugin allows you to create and publish quotes of your customers about your work and helpful tips for the website visitors.
 
-<a href="http://wordpress.org/extend/plugins/quotes-and-tips/faq/" target="_blank">FAQ</a>
+<a href="http://wordpress.org/plugins/quotes-and-tips/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 = Features =
@@ -23,12 +23,19 @@ This plugin allows you to create and publish quotes of your customers about your
 * Actions: Add quotes & tips to any place on your website.
 * Label: Change a label for the Quotes block and Tips block - user custom label or title of the quotes & tips posts.
 
+= Recommended Plugins =
+
+The author of the Quotes and Tips also recommends the following plugins:
+
+* <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
+There is also a premium version of the plugin <a href="http://bestwebsoft.com/plugin/updater-pro/?k=e8f05fa90cedfd3a96483e8f0ca60ab5">Updater Pro</a> with more useful features available. It allows to update plugins and WordPress core on several websites. It can make backup of all your files and database before updating.
+
 = Translation =
 
 * German (de_DE) (thanks to <a href="mailto:arnold@montjoie.de">Arnold Montjoie</a>)
 * Hebrew (he_IL) (thanks to Sagive SEO)
 * Russian (ru_RU)
-* Ukrainian (uk_UA)
+* Ukrainian (uk)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -95,6 +102,14 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V1.14 - 30.10.2013 =
+* NEW : Add checking installed wordpress version.
+* Update : We updated all functionality for wordpress 3.7.1.
+* Update : Qoutes and Tips icons updated.
+* Update : Activation of radio button or checkbox by clicking on its label.
+* Bugfix : Default background now is used only if additional settings checked.
+* Bugfix : We fixed Qoutes author name and position fields errors.
+
 = V1.13 - 02.10.2013 =
 * NEW : The Ukrainian language file is added to the plugin.
 * Update : We updated all functionality for wordpress 3.6.1.
@@ -142,6 +157,9 @@ Here is an example for the German language files.
 * NEW : The Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.14 =
+Add checking installed wordpress version. We updated all functionality for wordpress 3.7.1. Qoutes and Tips icons updated. Activation of radio button or checkbox by clicking on its label. Default background now is used only if additional settings checked. We fixed Qoutes author name and position fields errors.
 
 = V1.13 =
 The Ukrainian language file is added to the plugin. We updated all functionality for wordpress 3.6.1.

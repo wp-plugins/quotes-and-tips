@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: quotes_and_tips\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-04 14:43+0300\n"
-"PO-Revision-Date: 2013-09-04 14:43+0300\n"
+"POT-Creation-Date: 2013-10-30 15:32+0300\n"
+"PO-Revision-Date: 2013-10-30 15:33+0300\n"
 "Last-Translator: \n"
 "Language-Team: Arnold Montjoie <arnold@montjoie.de>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Language: German\n"
@@ -17,74 +17,74 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: quotes-and-tips.php:32
+#: quotes-and-tips.php:33
 msgid "Quotes and Tips"
 msgstr "Zitate und Tipps"
 
-#: quotes-and-tips.php:39
 #: quotes-and-tips.php:40
+#: quotes-and-tips.php:41
 #: quotes-and-tips.php:183
 msgid "Tips"
 msgstr "Tipps"
 
-#: quotes-and-tips.php:48
+#: quotes-and-tips.php:49
 msgid "Add a new tip"
 msgstr "Neuen Tipp erstellen"
 
-#: quotes-and-tips.php:49
+#: quotes-and-tips.php:50
 msgid "Edit tips"
 msgstr "Tipps bearbeiten"
 
-#: quotes-and-tips.php:50
+#: quotes-and-tips.php:51
 msgid "New tip"
 msgstr "Neuer Tipp"
 
-#: quotes-and-tips.php:51
+#: quotes-and-tips.php:52
 msgid "View tips"
 msgstr "Tipps ansehen"
 
-#: quotes-and-tips.php:52
+#: quotes-and-tips.php:53
 msgid "Search tips"
 msgstr "Tipps suchen"
 
-#: quotes-and-tips.php:53
+#: quotes-and-tips.php:54
 msgid "No tips found"
 msgstr "Keine Tipps gefunden"
 
-#: quotes-and-tips.php:54
+#: quotes-and-tips.php:55
 msgid "No tips found in Trash"
 msgstr "Keine Tipps im Papiekorb gefunden"
 
-#: quotes-and-tips.php:64
 #: quotes-and-tips.php:65
+#: quotes-and-tips.php:66
 msgid "Quotes"
 msgstr "Zitate"
 
-#: quotes-and-tips.php:73
+#: quotes-and-tips.php:74
 msgid "Add a New quote"
 msgstr "Ein neues Zitat erstellen"
 
-#: quotes-and-tips.php:74
+#: quotes-and-tips.php:75
 msgid "Edit quote"
 msgstr "Zitat bearbeiten"
 
-#: quotes-and-tips.php:75
+#: quotes-and-tips.php:76
 msgid "New quote"
 msgstr "Neues Zitat"
 
-#: quotes-and-tips.php:76
+#: quotes-and-tips.php:77
 msgid "View quote"
 msgstr "Zitat ansehen"
 
-#: quotes-and-tips.php:77
+#: quotes-and-tips.php:78
 msgid "Search quote"
 msgstr "Zitat suchen"
 
-#: quotes-and-tips.php:78
+#: quotes-and-tips.php:79
 msgid "No quote found"
 msgstr "Kein Zitat gefunden"
 
-#: quotes-and-tips.php:79
+#: quotes-and-tips.php:80
 msgid "No quote found in Trash"
 msgstr "Kein Zitat im Papierkorb gefunden"
 
@@ -251,56 +251,20 @@ msgstr "FAQ (häufig gestelle Fragen)"
 msgid "Support"
 msgstr "Unterstützung"
 
-#, fuzzy
-#~ msgid "Pro plugins"
-#~ msgstr "Empfohlene Plugins"
-#~ msgid "Activated plugins"
-#~ msgstr "Aktivierte Plugins"
-#~ msgid "Read more"
-#~ msgstr "Lies mehr"
-#~ msgid "Installed plugins"
-#~ msgstr "Installierte Plugins"
-#~ msgid "Recommended plugins"
-#~ msgstr "Empfohlene Plugins"
+#: quotes-and-tips.php:582
+msgid "requires"
+msgstr ""
 
-#, fuzzy
-#~ msgid "Free plugins"
-#~ msgstr "Empfohlene Plugins"
-#~ msgid "Download"
-#~ msgstr "Herunterladen"
-#~ msgid "Install %s"
-#~ msgstr "Installiere %s"
-#~ msgid "Install now from wordpress.org"
-#~ msgstr "Jetzt von wordpress.org herunterladen"
-#~ msgid "If you have any questions, please contact us via"
-#~ msgstr "Falls irgendwelche Fragen aufkommen, kann per Email über"
+#: quotes-and-tips.php:582
+msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
+msgstr ""
 
-#, fuzzy
-#~ msgid "Active Plugins"
-#~ msgstr "Aktivierte Plugins"
+#: quotes-and-tips.php:582
+msgid "Back to the WordPress "
+msgstr ""
 
+#: quotes-and-tips.php:582
 #, fuzzy
-#~ msgid "Inactive Plugins"
-#~ msgstr "Aktivierte Plugins"
-
-#, fuzzy
-#~ msgid "Send to support"
-#~ msgstr "Unterstützung"
-#~ msgid ""
-#~ "If you have any questions, please contact us via plugin@bestwebsoft.com "
-#~ "or fill out the contact form on our website"
-#~ msgstr ""
-#~ "Falls irgendwelche Fragen aufkommen, kann per Email über "
-#~ "plugin@bestwebsoft.com mit uns Kontakt aufgenommen werden oder über unser "
-#~ "Kontaktformular auf unserer Webseite"
-#~ msgid "Options saved."
-#~ msgstr "Натсройки сохранены."
-#~ msgid "Show randomly on page load"
-#~ msgstr "Показать случайным образом при загрузке страницы"
-#~ msgid "Time for reload (sec)"
-#~ msgstr "Время перезагрузки (в секундах)"
-#~ msgid "Repeat x"
-#~ msgstr "По горизонтали (х)"
-#~ msgid "Repeat y"
-#~ msgstr "По вертикали (у)"
+msgid "Plugins page"
+msgstr "Empfohlene Plugins"
 
