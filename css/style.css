@@ -4,7 +4,8 @@
 .admin-color-classic #adminmenu #toplevel_page_bws_plugins div.wp-menu-image {
 	background: url("../images/icon_16_b.png") no-repeat scroll center center transparent;
 }
-#adminmenu #toplevel_page_bws_plugins:hover div.wp-menu-image, #adminmenu #toplevel_page_bws_plugins.wp-has-current-submenu div.wp-menu-image {
+#adminmenu #toplevel_page_bws_plugins:hover div.wp-menu-image,
+#adminmenu #toplevel_page_bws_plugins.wp-has-current-submenu div.wp-menu-image {
 	background: url("../images/icon_16_c.png") no-repeat scroll center center transparent;
 }	
 .wrap #icon-options-general.icon32-bws {
@@ -38,18 +39,27 @@
 
 #adminmenu #menu-posts-quote .wp-menu-image,
 #adminmenu #menu-posts-tips .wp-menu-image {
-	background: url("../images/qoutes-and-tips16.png") no-repeat scroll 4px -24px transparent;
+	background: url("../images/qoutes-and-tips16.png") no-repeat scroll 1px -27px transparent;
+}
+#adminmenu #menu-posts-tips .wp-menu-image {
+	background-position: -27px -27px;
 }
 #adminmenu #menu-posts-quote:hover .wp-menu-image,
 #adminmenu #menu-posts-quote .wp-has-current-submenu .wp-menu-image,
 #adminmenu #menu-posts-tips:hover .wp-menu-image,
 #adminmenu #menu-posts-tips .wp-has-current-submenu .wp-menu-image {
-	background: url("../images/qoutes-and-tips16.png") no-repeat scroll 4px 6px transparent;
+	background: url("../images/qoutes-and-tips16.png") no-repeat scroll 1px 1px transparent;
+}
+#adminmenu #menu-posts-tips:hover .wp-menu-image,
+#adminmenu #menu-posts-tips .wp-has-current-submenu .wp-menu-image {
+	background-position: -27px 1px;
 }
 .wrap #icon-edit.icon32-posts-quote,
 .wrap #icon-edit.icon32-posts-tips {
     background: url("../images/qoutes-and-tips32.png") no-repeat scroll 0 0 transparent;
-    background-size: 36px 31px;
+}
+.wrap #icon-edit.icon32-posts-tips {
+    background-position: 0 -34px;
 }
 #quotes_box_and_tips {
 	background-image: url('../images/quotes_box_and_tips_bg.png');
@@ -76,7 +86,7 @@
 	width: 100%;
 }
 #quotes_box_and_tips .tips_box,
-#quotes_box_and_tips .quotes_box{
+#quotes_box_and_tips .quotes_box {
 	width: 47%;
 	float: left;
 	padding: 0 1.49%;
@@ -92,7 +102,7 @@
 	text-align: right;
 	color: #a8dcff;
 }
-#quotes_box_and_tips .signature span{
+#quotes_box_and_tips .signature span {
 	color: #74c6ff;
 }
 #wpcontent select option {

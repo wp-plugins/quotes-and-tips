@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 1.14
+Stable tag: 1.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,7 +28,7 @@ This plugin allows you to create and publish quotes of your customers about your
 The author of the Quotes and Tips also recommends the following plugins:
 
 * <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
-There is also a premium version of the plugin <a href="http://bestwebsoft.com/plugin/updater-pro/?k=e8f05fa90cedfd3a96483e8f0ca60ab5">Updater Pro</a> with more useful features available. It allows to update plugins and WordPress core on several websites. It can make backup of all your files and database before updating.
+There is also a premium version of the plugin <a href="http://bestwebsoft.com/plugin/updater-pro/?k=e8f05fa90cedfd3a96483e8f0ca60ab5">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
 
 = Translation =
 
@@ -102,6 +102,10 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V1.15 - 28.11.2013 =
+* Update : Tips icons updated.
+* Update : BWS plugins section is updated.
+
 = V1.14 - 30.10.2013 =
 * NEW : Add checking installed wordpress version.
 * Update : We updated all functionality for wordpress 3.7.1.
@@ -157,6 +161,9 @@ Here is an example for the German language files.
 * NEW : The Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.15 =
+Tips icons updated. BWS plugins section is updated.
 
 = V1.14 =
 Add checking installed wordpress version. We updated all functionality for wordpress 3.7.1. Qoutes and Tips icons updated. Activation of radio button or checkbox by clicking on its label. Default background now is used only if additional settings checked. We fixed Qoutes author name and position fields errors.
