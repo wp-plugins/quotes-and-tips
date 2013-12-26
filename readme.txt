@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: quote, tip, information, hints, quotes, tips, additional info, statements
 Requires at least: 3.0
-Tested up to: 3.7.1
-Stable tag: 1.15
+Tested up to: 3.8
+Stable tag: 1.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,10 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V1.16 - 26.12.2013 =
+* Update : BWS plugins section is updated.
+* Update : We updated all functionality for wordpress 3.8.
+
 = V1.15 - 28.11.2013 =
 * Update : Tips icons updated.
 * Update : BWS plugins section is updated.
@@ -161,6 +165,9 @@ Here is an example for the German language files.
 * NEW : The Russian language file is added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.16 =
+BWS plugins section is updated. We updated all functionality for wordpress 3.8.
 
 = V1.15 =
 Tips icons updated. BWS plugins section is updated.

@@ -4,7 +4,7 @@ Plugin Name: Quotes and Tips
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin displays the Quotes and Tips in random order
 Author: BestWebSoft
-Version: 1.15
+Version: 1.16
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -309,9 +309,10 @@ if ( ! function_exists( 'qtsndtps_settings_page' ) ) {
 		<div class="icon32 icon32-bws" id="icon-options-general"></div>
 		<h2><?php _e('Quotes and Tips Settings', 'quotes_and_tips' ); ?></h2>
 		<div class="updated fade" <?php if ( ! isset( $_REQUEST['qtsndtps_form_submit'] ) || "" != $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
+		<div id="qtsndtps_settings_notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice:", 'quotes_and_tips' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'quotes_and_tips' ); ?></p></div>
 		<div class="error" <?php if ( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 		<p><?php echo __( "If you would like to use this block, please paste the following strings into the template source code", 'quotes_and_tips' ); ?> <code>&#60;?php if ( function_exists( 'qtsndtps_get_random_tip_quote' ) ) qtsndtps_get_random_tip_quote(); ?&#62;</code></p>	
-		<form method="post" action="admin.php?page=quotes-and-tips.php" id='qtsndtps_form_image_size' enctype="multipart/form-data">
+		<form method="post" action="admin.php?page=quotes-and-tips.php" id="qtsndtps_form_image_size" enctype="multipart/form-data">
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Upload settings:', 'quotes_and_tips' ); ?> </th>
@@ -401,6 +402,17 @@ if ( ! function_exists( 'qtsndtps_settings_page' ) ) {
 			</p>
 			<?php wp_nonce_field( plugin_basename( __FILE__ ), 'qtsndtps_nonce_name' ); ?>
 		</form>
+		<br />
+		<div class="bws-plugin-reviews">
+			<div class="bws-plugin-reviews-rate">
+			<?php _e( 'If you enjoy our plugin, please give it 5 stars on WordPress', 'quotes_and_tips' ); ?>:<br/>
+			<a href="http://wordpress.org/support/view/plugin-reviews/quotes-and-tips" target="_blank" title="Quotes and Tips reviews"><?php _e( 'Rate the plugin', 'quotes_and_tips' ); ?></a><br/>
+			</div>
+			<div class="bws-plugin-reviews-support">
+			<?php _e( 'If there is something wrong about it, please contact us', 'quotes_and_tips' ); ?>:<br/>
+			<a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a>
+			</div>
+		</div>
 	</div>
 	<?php } 
 }
@@ -555,7 +567,11 @@ if ( ! function_exists ( 'qtsndtps_print_style_script' ) ) {
 
 if ( ! function_exists ( 'qtsndtps_admin_head' ) ) {
 	function qtsndtps_admin_head() {
-		wp_enqueue_style( 'qtsndtpsStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
+		global $wp_version;
+		if ( $wp_version < 3.8 )
+			wp_enqueue_style( 'qtsndtpsStylesheet', plugins_url( 'css/style_wp_before_3.8.css', __FILE__ ) );	
+		else
+			wp_enqueue_style( 'qtsndtpsStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 
 		if ( false !== strpos( $_SERVER["REQUEST_URI"], "quotes-and-tips.php" ) ) {			
 			wp_enqueue_style( 'farbtastic' );
@@ -565,6 +581,35 @@ if ( ! function_exists ( 'qtsndtps_admin_head' ) ) {
 		
 		if ( isset( $_GET['page'] ) && "bws_plugins" == $_GET['page'] )
 			wp_enqueue_script( 'bws_menu_script', plugins_url( 'js/bws_menu.js', __FILE__ ) );
+	}
+}
+
+if ( ! function_exists('qtsndtps_admin_js') ) {
+	function qtsndtps_admin_js() {
+		if ( isset( $_GET['page'] ) && "quotes-and-tips.php" == $_GET['page'] ) {
+			/* add notice about changing in the settings page */
+			?>
+			<script type="text/javascript">
+				(function($) {
+					$(document).ready( function() {
+						$( '#qtsndtps_form_image_size input' ).bind( "change click select", function() {
+							if ( $( this ).attr( 'type' ) != 'submit' ) {
+								$( '.updated.fade' ).css( 'display', 'none' );
+								$( '#qtsndtps_settings_notice' ).css( 'display', 'block' );
+							};
+						});
+						$( '#link-color-example' ).on( "click", function() {
+								$( '.updated.fade' ).css( 'display', 'none' );
+								$( '#qtsndtps_settings_notice' ).css( 'display', 'block' );
+						});
+						$( '#link-text-example' ).live( "click", function() {
+								$( '.updated.fade' ).css( 'display', 'none' );
+								$( '#qtsndtps_settings_notice' ).css( 'display', 'block' );
+						});
+					});
+				})(jQuery);
+			</script>
+		<?php }
 	}
 }
 
@@ -600,6 +645,7 @@ add_action( 'init', 'register_qtsndtps_settings' );
 add_action( 'init', 'qtsndtps_plugin_init' );
 add_action( 'admin_init', 'qtsndtps_add_custom_metabox' );
 add_action( 'admin_init', 'qtsndtps_version_check' );
+add_action( 'admin_head', 'qtsndtps_admin_js' );
 add_action( 'wp_head', 'qtsndtps_print_style_script' );
 add_action( 'admin_enqueue_scripts', 'qtsndtps_admin_head' );
 add_action( 'wp_enqueue_scripts', 'qtsndtps_wp_head' );
