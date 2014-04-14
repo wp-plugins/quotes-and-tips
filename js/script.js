@@ -80,3 +80,21 @@ var farbtastic2;
 		
 	});
 })(jQuery);
+(function($) {
+	$(document).ready( function() {
+		$( '#qtsndtps_form_image_size input' ).bind( "change click select", function() {
+			if ( $( this ).attr( 'type' ) != 'submit' ) {
+				$( '.updated.fade' ).css( 'display', 'none' );
+				$( '#qtsndtps_settings_notice' ).css( 'display', 'block' );
+			};
+		});
+		$( '#link-color-example' ).on( "click", function() {
+				$( '.updated.fade' ).css( 'display', 'none' );
+				$( '#qtsndtps_settings_notice' ).css( 'display', 'block' );
+		});
+		$( '#link-text-example' ).live( "click", function() {
+				$( '.updated.fade' ).css( 'display', 'none' );
+				$( '#qtsndtps_settings_notice' ).css( 'display', 'block' );
+		});
+	});
+})(jQuery);
