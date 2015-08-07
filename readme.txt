@@ -16,6 +16,8 @@ This plugin allows you to create and publish quotes of your customers about your
 
 http://www.youtube.com/watch?v=kSR0mERfxBI
 
+<a href="https://www.youtube.com/watch?v=tEOjkZrwdNA" target="_blank">Video instruction on Installation</a>
+
 <a href="http://wordpress.org/plugins/quotes-and-tips/faq/" target="_blank">FAQ</a>
 
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
@@ -57,6 +59,8 @@ We can fix some things for free for the users who provide translation of our plu
 3. The site settings are available in 'BWS Plugins'->'Quotes and Tips'.
 
 <a href="https://docs.google.com/document/d/1LF8JiXTELxGQ-xLbNnc0bUWopxqXkkCgYhGwU6lSsAI/edit" target="_blank">View a PDF version of Step-by-step Instruction on Quotes and Tips Installation</a>.
+
+http://www.youtube.com/watch?v=tEOjkZrwdNA
 
 == Frequently Asked Questions ==
 
